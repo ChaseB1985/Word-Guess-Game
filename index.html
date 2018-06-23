@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>jQuery Calculator</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<!-- Jumbotron for Title -->
+<div class="jumbotron">
+    <h1 class="text-center">Rick and Morty Word Guess</h1>
+    <h3 class="text-center">Guess a letter, try and make a word.</h3>
+   <script>$(this).css('background-image', url('rmPictop.jpg'))</script>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+      <!-- Calculator Panel -->
+      <div class="col-lg-4">
+        <div class="card">
+          <h3 class="card-header">Letters</h3>
+
+          <div class="card-body">
+            <button id="button-1" class="btn btn-primary letter" value="a"><h1>a</h1></button>
+            <button id="button-2" class="btn btn-primary letter" value="b"><h1>b</h1></button>
+            <button id="button-3" class="btn btn-primary letter" value="c"><h1>c</h1></button>
+            
+            <br><br>
+            <button id="button-4" class="btn btn-primary letter" value="d"><h1>d</h1></button>
+            <button id="button-5" class="btn btn-primary letter" value="e"><h1>e</h1></button>
+            <button id="button-6" class="btn btn-primary letter" value="f"><h1>f</h1></button>
+            <br><br>
+            <button id="button-7" class="btn btn-primary letter" value="g"><h1>g</h1></button>
+            <button id="button-8" class="btn btn-primary letter" value="h"><h1>h</h1></button>
+            <button id="button-9" class="btn btn-primary letter" value="i"><h1>i</h1></button>
+            <br><br>
+            <button id="button-10" class="btn btn-primary letter" value="j"><h1>j</h1></button>
+            <button id="button-11" class="btn btn-primary letter" value="k"><h1>k</h1></button>
+            <button id="button-12" class="btn btn-primary letter" value="l"><h1>l</h1></button>
+            <br><br>
+            <button id="button-13" class="btn btn-primary letter" value="m"><h1>m</h1></button>
+            <button id="button-14" class="btn btn-primary letter" value="n"><h1>n</h1></button>
+            <button id="button-15" class="btn btn-primary letter" value="o"><h1>o</h1></button>
+            <br><br>
+            <button id="button-16" class="btn btn-primary letter" value="p"><h1>p</h1></button>
+            <button id="button-17" class="btn btn-primary letter" value="q"><h1>q</h1></button>
+            <button id="button-18" class="btn btn-primary letter" value="r"><h1>r</h1></button>
+            <br></br>
+            <button id="button-19" class="btn btn-primary letter" value="s"><h1>s</h1></button>
+            <button id="button-20" class="btn btn-primary letter" value="t"><h1>t</h1></button>
+            <button id="button-21" class="btn btn-primary letter" value="u"><h1>u</h1></button>
+            <br><br>
+            <button id="button-22" class="btn btn-primary letter" value="v"><h1>v</h1></button>
+            <button id="button-23" class="btn btn-primary letter" value="w"><h1>w</h1></button>
+            <button id="button-24" class="btn btn-primary letter" value="x"><h1>x</h1></button>
+            <br><br>
+            <button id="button-25" class="btn btn-primary letter" value="y"><h1>y</h1></button>
+            <button id="button-26" class="btn btn-primary letter" value="z"><h1>z</h1></button>
+            <button id="button-clear" class="btn btn-dark clear" value="clear"><h1>clear</h1></button>
+            <br><br>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Panel -->
+      <div class="col-lg-6">
+        <div class="card">
+          <h3 class="card-header">Result</h3>
+          <div class="card-body">
+            <h1 id="first-number"></h1>
+            <h1 id="operator"></h1>
+            <h1 id="second-number"></h1>
+            <hr>
+            <h1 id="result"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+
+
+
+$(document).ready(function() {
+$('.number').on('click', function(e) {
+    console.log ($(this).val())
+ });
+
+  var num1 = "";
+  var num2 = "";
+  var operator = "";
+  var total = "";
+
+
+  $(".number").click( function () {
+     console.log("you pressed:  " + $(this).val());
+     $("#first-number").append(num1);
+     num1 += $(this).val();
+     
+   });
+
+  $(".operator").click( function () {
+    console.log("you pressed:  " + $(this).val());
+    operator += $(this).val();
+  });
+
+
+$(document).ready(function() {
+    $('button').on('click', function(e) {
+        let btn = e.target.innerHTML;
+        if (btn >= '0' && btn <= '9') {
+            handleNumber(btn);
+        } else {
+            handleOperator(btn);
+        }
+    });
+});
+document.body.style.backgroundImage = "url('asset/images/rmPic.png')"
+
+
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>
+    
+<footer>
+    <script src ="asset/javascript/game2.js"></script>
+</footer>
+
+</html>
